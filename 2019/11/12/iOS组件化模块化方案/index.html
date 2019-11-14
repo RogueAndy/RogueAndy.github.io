@@ -51,19 +51,19 @@
   };
 </script>
 
-  <meta name="description" content="1 组件化模块化  网上有许多讲解组件化、模块化开发的文章，但是通常情况下，容易把这两种概念混为一谈，并没有加以区分，而且许多人对于组件、模块的定义也不甚明了，下面，我将会为大家讲解组件化、模块化的区别，以及在我们相关的工作项目中的分层。 1.1 组件化模块化的广泛定义   组件 目的 特点 接口 成果 架构定位    组件 重用、解耦 高重用、低耦合 无统一接口 基础库、基础组件 纵向分层">
+  <meta name="description" content="1 组件化模块化  网上有许多讲解组件化、模块化开发的文章，但是通常情况下，容易把这两种概念混为一谈，并没有加以区分，而且许多人对于组件、模块的定义也不甚明了，下面，我将会为大家讲解组件化、模块化的区别，以及在我们相关的工作项目中的分层。 1.1 组件化模块化的广泛定义   组件 目的 特点 接口 成果 架构定位    组件 重用、解耦 高重用、低耦合 无统一接口 基础库、基础组件 纵向分">
 <meta name="keywords" content="大钟,博客,dazhong,dazhongge">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS组件化模块化方案">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;12&#x2F;iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E6%A8%A1%E5%9D%97%E5%8C%96%E6%96%B9%E6%A1%88&#x2F;index.html">
 <meta property="og:site_name" content="大钟">
-<meta property="og:description" content="1 组件化模块化  网上有许多讲解组件化、模块化开发的文章，但是通常情况下，容易把这两种概念混为一谈，并没有加以区分，而且许多人对于组件、模块的定义也不甚明了，下面，我将会为大家讲解组件化、模块化的区别，以及在我们相关的工作项目中的分层。 1.1 组件化模块化的广泛定义   组件 目的 特点 接口 成果 架构定位    组件 重用、解耦 高重用、低耦合 无统一接口 基础库、基础组件 纵向分层">
+<meta property="og:description" content="1 组件化模块化  网上有许多讲解组件化、模块化开发的文章，但是通常情况下，容易把这两种概念混为一谈，并没有加以区分，而且许多人对于组件、模块的定义也不甚明了，下面，我将会为大家讲解组件化、模块化的区别，以及在我们相关的工作项目中的分层。 1.1 组件化模块化的广泛定义   组件 目的 特点 接口 成果 架构定位    组件 重用、解耦 高重用、低耦合 无统一接口 基础库、基础组件 纵向分">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;12&#x2F;iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E6%A8%A1%E5%9D%97%E5%8C%96%E6%96%B9%E6%A1%88&#x2F;%E5%8C%BA%E5%8E%BFApp.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;12&#x2F;iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E6%A8%A1%E5%9D%97%E5%8C%96%E6%96%B9%E6%A1%88&#x2F;%E4%B8%80%E7%BA%A7.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;12&#x2F;iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E6%A8%A1%E5%9D%97%E5%8C%96%E6%96%B9%E6%A1%88&#x2F;%E4%BC%98%E7%A7%80.jpeg">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;12&#x2F;iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E6%A8%A1%E5%9D%97%E5%8C%96%E6%96%B9%E6%A1%88&#x2F;realm%E6%95%B0%E6%8D%AE%E5%BA%93.jpg">
-<meta property="og:updated_time" content="2019-11-14T07:57:06.012Z">
+<meta property="og:updated_time" content="2019-11-14T08:05:10.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;12&#x2F;iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E6%A8%A1%E5%9D%97%E5%8C%96%E6%96%B9%E6%A1%88&#x2F;%E5%8C%BA%E5%8E%BFApp.png">
 
@@ -219,7 +219,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-14 15:57:06" itemprop="dateModified" datetime="2019-11-14T15:57:06+08:00">2019-11-14</time>
+                <time title="Modified: 2019-11-14 16:05:10" itemprop="dateModified" datetime="2019-11-14T16:05:10+08:00">2019-11-14</time>
               </span>
 
           
@@ -236,6 +236,7 @@
         <!-- <center><font color=#1A1A1A size=8>关于iOS端的组件化与模块化</font></center> -->
 
 <!--<p align="right"><font color=#1A1A1A size=5>主讲人：大钟</font></p> -->
+
 <h1 id="1-组件化模块化"><a href="#1-组件化模块化" class="headerlink" title="1 组件化模块化"></a>1 组件化模块化</h1><p>  网上有许多讲解组件化、模块化开发的文章，但是通常情况下，容易把这两种概念混为一谈，并没有加以区分，而且许多人对于组件、模块的定义也不甚明了，下面，我将会为大家讲解组件化、模块化的区别，以及在我们相关的工作项目中的分层。</p>
 <h2 id="1-1-组件化模块化的广泛定义"><a href="#1-1-组件化模块化的广泛定义" class="headerlink" title="1.1 组件化模块化的广泛定义"></a>1.1 组件化模块化的广泛定义</h2><table>
 <thead>
