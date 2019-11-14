@@ -51,19 +51,19 @@
   };
 </script>
 
-  <meta name="description" content="主讲人：大钟  #1 组件化模块化   网上有许多讲解组件化、模块化开发的文章，但是通常情况下，容易把这两种概念混为一谈，并没有加以区分，而且许多人对于组件、模块的定义也不甚明了，下面，我将会为大家讲解组件化、模块化的区别，以及在我们相关的工作项目中的分层。 ##1.1 组件化模块化的广泛定义    组件 目的 特点 接口 成果 架构定位    组件 重用、解耦 高重用、低耦合 无统一接口 基">
+  <meta name="description" content="主讲人：大钟 # 1 组件化模块化    网上有许多讲解组件化、模块化开发的文章，但是通常情况下，容易把这两种概念混为一谈，并没有加以区分，而且许多人对于组件、模块的定义也不甚明了，下面，我将会为大家讲解组件化、模块化的区别，以及在我们相关的工作项目中的分层。 1.1 组件化模块化的广泛定义   组件 目的 特点 接口 成果 架构定位    组件 重用、解耦 高重用、低耦合 无统一接口 基础库">
 <meta name="keywords" content="大钟,博客,dazhong,dazhongge">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS组件化模块化方案">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;12&#x2F;iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E6%A8%A1%E5%9D%97%E5%8C%96%E6%96%B9%E6%A1%88&#x2F;index.html">
 <meta property="og:site_name" content="大钟">
-<meta property="og:description" content="主讲人：大钟  #1 组件化模块化   网上有许多讲解组件化、模块化开发的文章，但是通常情况下，容易把这两种概念混为一谈，并没有加以区分，而且许多人对于组件、模块的定义也不甚明了，下面，我将会为大家讲解组件化、模块化的区别，以及在我们相关的工作项目中的分层。 ##1.1 组件化模块化的广泛定义    组件 目的 特点 接口 成果 架构定位    组件 重用、解耦 高重用、低耦合 无统一接口 基">
+<meta property="og:description" content="主讲人：大钟 # 1 组件化模块化    网上有许多讲解组件化、模块化开发的文章，但是通常情况下，容易把这两种概念混为一谈，并没有加以区分，而且许多人对于组件、模块的定义也不甚明了，下面，我将会为大家讲解组件化、模块化的区别，以及在我们相关的工作项目中的分层。 1.1 组件化模块化的广泛定义   组件 目的 特点 接口 成果 架构定位    组件 重用、解耦 高重用、低耦合 无统一接口 基础库">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;12&#x2F;iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E6%A8%A1%E5%9D%97%E5%8C%96%E6%96%B9%E6%A1%88&#x2F;%E5%8C%BA%E5%8E%BFApp.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;12&#x2F;iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E6%A8%A1%E5%9D%97%E5%8C%96%E6%96%B9%E6%A1%88&#x2F;%E4%B8%80%E7%BA%A7.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;12&#x2F;iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E6%A8%A1%E5%9D%97%E5%8C%96%E6%96%B9%E6%A1%88&#x2F;%E4%BC%98%E7%A7%80.jpeg">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;12&#x2F;iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E6%A8%A1%E5%9D%97%E5%8C%96%E6%96%B9%E6%A1%88&#x2F;realm%E6%95%B0%E6%8D%AE%E5%BA%93.jpg">
-<meta property="og:updated_time" content="2019-11-12T09:53:11.306Z">
+<meta property="og:updated_time" content="2019-11-14T07:52:52.613Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;12&#x2F;iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E6%A8%A1%E5%9D%97%E5%8C%96%E6%96%B9%E6%A1%88&#x2F;%E5%8C%BA%E5%8E%BFApp.png">
 
@@ -155,6 +155,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">6</span></a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
   </ul>
 
 </nav>
@@ -206,10 +211,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-11-12 17:32:44 / Modified: 17:53:11" itemprop="dateCreated datePublished" datetime="2019-11-12T17:32:44+08:00">2019-11-12</time>
+              <time title="Created: 2019-11-12 17:32:44" itemprop="dateCreated datePublished" datetime="2019-11-12T17:32:44+08:00">2019-11-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-14 15:52:52" itemprop="dateModified" datetime="2019-11-14T15:52:52+08:00">2019-11-14</time>
+              </span>
 
           
 
@@ -225,11 +236,10 @@
         <!-- <center><font color=#1A1A1A size=8>关于iOS端的组件化与模块化</font></center> -->
 
 <p align="right"><font color="#1A1A1A" size="5">主讲人：大钟</font></p>
+# 1 组件化模块化
 
-<p>#1 组件化模块化</p>
 <p>  网上有许多讲解组件化、模块化开发的文章，但是通常情况下，容易把这两种概念混为一谈，并没有加以区分，而且许多人对于组件、模块的定义也不甚明了，下面，我将会为大家讲解组件化、模块化的区别，以及在我们相关的工作项目中的分层。</p>
-<p>##1.1 组件化模块化的广泛定义</p>
-<table>
+<h2 id="1-1-组件化模块化的广泛定义"><a href="#1-1-组件化模块化的广泛定义" class="headerlink" title="1.1 组件化模块化的广泛定义"></a>1.1 组件化模块化的广泛定义</h2><table>
 <thead>
 <tr>
 <th>组件</th>
@@ -261,8 +271,7 @@
 <li>组件：最初的目的是代码重用，功能相对单一或独立。在整个系统的代码层次上位于最底层，被其他代码所以来，所以说组件是纵向分层。</li>
 <li>模块：最初的目的是将统一类型的代码整合在一起，所以模块的功能相对复杂，但都属于同一个业务。不同的模块之间，也会存在依赖关系，但是大部分都是业务之间的相互跳转，从地位上而言，都是属于同一层次的平级关系。</li>
 </ul>
-<p>##1.2 谈谈自己对于组件化模块化的理解</p>
-<p>  从上面的结构图标以及组件定义，我们能够清楚的知道，组件更偏向于代码的底层，而且是公用的底层，所以是高重用，纵向分层；组件又是属于低耦合，组件之间，很少存在相互引用的问题，属于基础库，没有统一的接口，就是说，组件本身也是要执行单一原则，一个组件只做一件事情，而开发者在高层编码的时候，可以使用组件组装成一完整的功能块。</p>
+<h2 id="1-2-谈谈自己对于组件化模块化的理解"><a href="#1-2-谈谈自己对于组件化模块化的理解" class="headerlink" title="1.2 谈谈自己对于组件化模块化的理解"></a>1.2 谈谈自己对于组件化模块化的理解</h2><p>  从上面的结构图标以及组件定义，我们能够清楚的知道，组件更偏向于代码的底层，而且是公用的底层，所以是高重用，纵向分层；组件又是属于低耦合，组件之间，很少存在相互引用的问题，属于基础库，没有统一的接口，就是说，组件本身也是要执行单一原则，一个组件只做一件事情，而开发者在高层编码的时候，可以使用组件组装成一完整的功能块。</p>
 <p>  来看一下模块，模块层，更偏向于业务层，主要更大的业务功能块，而业务层又是用户能够直接参与的操作，所以业务层相对更复杂。模块层是一个功能复杂的代码块集合，它可以包含不同的组件，实现高内聚，内部之间相互嵌套使用，而后开放一个公共API接口供外部使用，实现了低耦合的效果，这样的就达到了模块层完全独立，而所有的模块层都是可以相互调用的，不存在A模块是基于B模块完成，所以模块层又是属于横向分块。</p>
 <p>  我们实际的项目中，具有如此的问题—-高耦合、低内聚、无重用。在实际项目移植的时候，迁移A模块，关联了许多公共模块B，我们还需要把这些B模块一路带过去，特别是项目积累越来越多，这样的问题越来越明显，这时候我们也许需要一定的代码重构。</p>
 <ul>
@@ -272,8 +281,7 @@
 <pre><code>将重复的代码合并为一份，也就是重用，我们可以看到组件化开发的定义，它的着重点就是重用，我们重构的效果就是要提炼出一个个组件给不同的功能使用。组件虽然位于代码的底层，但是偶尔会有依赖关系，而我们所做的就是尽量去减少组件的相互依赖，达到独立的效果，记住组件的原则就是高重用、低依赖。</code></pre><hr>
 <pre><code>模块是基于大型业务，按关注点进行划分，只需要开放公用API让开发者直接使用即可。</code></pre><hr>
 <pre><code>对了，还有一个问题，就是模块间的解耦，我们的项目需求，难免会有一些奇葩的，你懂得，然而我们面对问题，不能逃避，要去面对，就有了模块之间相互引用，模块之间相互引用，少不了导入头文件，关联文件，而我们的解决方案就是动态化解决，使用路由方式，来分发不同的模块事件，而且避免了模块间的相互引用。</code></pre><hr>
-<pre><code>e&apos;g，微信的朋友圈和微信的好友聊天功能，是两个不同的模块层，我们可以，如果腾讯以后再开发个类似微信的App，那么它可以把朋友圈或者聊天功能这个模块直接移植到另一个App上直接使用，减少了人力成本，这展示出了模块化的可移植性且独立，而在微信，我们可以在好友聊天里，点击好友的头像，跳转到好友的朋友圈列表，可以查看好友的朋友圈信息；相反，我也可以在朋友圈列表点击头像跳转到好友聊天界面，这样，就实现了模块之间的相互引用，而且引用十分简单，只需要调用公共开放的API传入一些用户id之类的信息，完全的独立，横向分块。那么，现在我们再来说，微信的朋友圈列表需要展示图片信息，好友聊天功能发送表情包也需要展示图片信息，他们的这两个功能重复了，那么，这时候，肯定有一个公共的组件，就是 Image 组件，无论是朋友圈模块还是好友聊天模块都会引用该组件，所以说，组件是高重用，而且是在代码的底层，属于纵向分层。</code></pre><p>#2 对iOS端项目进行模块分区</p>
-<p>  在这一节，针对于iOS端的项目，我们会进行明确的区分责任，主要有以下几点：</p>
+<pre><code>e&apos;g，微信的朋友圈和微信的好友聊天功能，是两个不同的模块层，我们可以，如果腾讯以后再开发个类似微信的App，那么它可以把朋友圈或者聊天功能这个模块直接移植到另一个App上直接使用，减少了人力成本，这展示出了模块化的可移植性且独立，而在微信，我们可以在好友聊天里，点击好友的头像，跳转到好友的朋友圈列表，可以查看好友的朋友圈信息；相反，我也可以在朋友圈列表点击头像跳转到好友聊天界面，这样，就实现了模块之间的相互引用，而且引用十分简单，只需要调用公共开放的API传入一些用户id之类的信息，完全的独立，横向分块。那么，现在我们再来说，微信的朋友圈列表需要展示图片信息，好友聊天功能发送表情包也需要展示图片信息，他们的这两个功能重复了，那么，这时候，肯定有一个公共的组件，就是 Image 组件，无论是朋友圈模块还是好友聊天模块都会引用该组件，所以说，组件是高重用，而且是在代码的底层，属于纵向分层。</code></pre><h1 id="2-对iOS端项目进行模块分区"><a href="#2-对iOS端项目进行模块分区" class="headerlink" title="2 对iOS端项目进行模块分区"></a>2 对iOS端项目进行模块分区</h1><p>  在这一节，针对于iOS端的项目，我们会进行明确的区分责任，主要有以下几点：</p>
 <!--  -->
 
 <ul>
@@ -284,9 +292,7 @@
 <p>  看如下的图片：</p>
 <p><img src="/2019/11/12/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E6%A8%A1%E5%9D%97%E5%8C%96%E6%96%B9%E6%A1%88/%E5%8C%BA%E5%8E%BFApp.png" alt="avatar"></p>
 <p><img src="/2019/11/12/iOS%E7%BB%84%E4%BB%B6%E5%8C%96%E6%A8%A1%E5%9D%97%E5%8C%96%E6%96%B9%E6%A1%88/%E4%B8%80%E7%BA%A7.png" alt="avatar"></p>
-<p>##2.1 组件化</p>
-<p>###2.1.1 网络层组件</p>
-<p>  iOS网络层的框架，一般使用NSURLConnection和NSURLSession，但是我们看见在苹果的官方文档有如下的信息所示：</p>
+<h2 id="2-1-组件化"><a href="#2-1-组件化" class="headerlink" title="2.1 组件化"></a>2.1 组件化</h2><h3 id="2-1-1-网络层组件"><a href="#2-1-1-网络层组件" class="headerlink" title="2.1.1 网络层组件"></a>2.1.1 网络层组件</h3><p>  iOS网络层的框架，一般使用NSURLConnection和NSURLSession，但是我们看见在苹果的官方文档有如下的信息所示：</p>
 <p><del>DEPRECATED: The NSURLConnection class should no longer be used.  NSURLSession is the replacement for NSURLConnection</del><br><del>@discussion The interface for NSURLConnection is very sparse, providing<br>        only the controls to start and cancel asynchronous loads of a<br>        URL request.</del><br>    我们在这里可以看见，苹果官方文档已经在 <strong>9.0</strong> 系统就放弃了 <strong>NSURLConnection</strong>，从而使用 <strong>NSURLSession</strong> 来代替 <strong>NSURLConnection</strong>。<br>    NSURLSession的使用十分的简单，首先根据会话创建一个请求 <strong>NSURLSessionTask</strong>，然后执行这个Task任务，而 <strong>NSURLSessionTask</strong> 本身是一个抽象类，主要是根据不同的需求，来使用它的子类，其子类常用的包含这几个:</p>
 <ul>
 <li><p>NSURLSessionDataTask</p>
@@ -322,14 +328,12 @@
 <li>网络监测模块：Reachability</li>
 <li>处理通讯的会话模块：NSURLSession<br>其中NSURLSession是我们开发者常用的模块，毕竟所有的请求和数据流通都是从这个模块反应出来的，其余的几个模块相对来说比较独立</li>
 </ul>
-<p>####2.1.1.1 Serialization序列化模块</p>
-<p>  序列化模块主要包括请求序列化 AFURLRequestSerialization 和响应序列化 AFURLResponseSerialization，它的主要功能可以这样来理解。</p>
+<h4 id="2-1-1-1-Serialization序列化模块"><a href="#2-1-1-1-Serialization序列化模块" class="headerlink" title="2.1.1.1 Serialization序列化模块"></a>2.1.1.1 Serialization序列化模块</h4><p>  序列化模块主要包括请求序列化 AFURLRequestSerialization 和响应序列化 AFURLResponseSerialization，它的主要功能可以这样来理解。</p>
 <ul>
 <li>AFURLRequestSerialization用来将字典参数编码成URL传输参数，并提供上传文件的基本功能实现。</li>
 <li>AFURLResponseSerialization用来处理服务器返回数据，提供返回码校验和数据校验的功能。</li>
 </ul>
-<p>####2.1.1.2 Security模块</p>
-<p>  AFURLResponseSerialization用来处理服务器返回数据，提供返回码校验和数据校验的功能。我们目前项目的做法，是把SSL证书放入放入项目内，在进行网络请求的时候使用APP内的证书进行验证，我们来看一下 AFN 的关于安全的逻辑是如何实现。</p>
+<h4 id="2-1-1-2-Security模块"><a href="#2-1-1-2-Security模块" class="headerlink" title="2.1.1.2 Security模块"></a>2.1.1.2 Security模块</h4><p>  AFURLResponseSerialization用来处理服务器返回数据，提供返回码校验和数据校验的功能。我们目前项目的做法，是把SSL证书放入放入项目内，在进行网络请求的时候使用APP内的证书进行验证，我们来看一下 AFN 的关于安全的逻辑是如何实现。</p>
 <ul>
 <li><p>AFSecurityPolicy<br>**AFSecurityPolicy使用固定的x.509证书和安全链接上的公钥来评估服务器的受信任程度。<br>  在你的应用中添加绑定的SSL证书有利于防止“中间人攻击”和其他缺陷。<br>  应用在处理敏感的客户数据或者金融信息时，强烈建议在HTTPS的基础上使用SSL绑定的配置和授权来进行网络通讯。</p>
 <p>**<br>这是一个安全策略对象，而以上的解释是AFN管理人员对于该对象的定义，我们来看以下的属性：</p>
@@ -338,10 +342,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">    评估服务器是否受信任的标准。默认是AFSSLPinningModeNone</span><br><span class="line">*/</span><br><span class="line">@property (readonly, nonatomic, assign) AFSSLPinningMode SSLPinningMode;</span><br><span class="line">/**</span><br><span class="line">    根据SSLPinningMode被用于评估服务器信任的证书。</span><br><span class="line">    在你使用AFNetworking作为嵌入framework时，默认情况下，将会把target的AFNetworking.framework内所有.cer证书都添加到该属性内，默认没有证书。使用certificatesInBundle方法从你的target中加载所有证书，再使用policyWithPinningMode:withPinnedCertificates创建新的policy。</span><br><span class="line">    注意，如果SSLPinningMode不为AFSSLPinningModeNone，在绑定证书匹配的情况下，evaluateServerTrust:forDomain:将返回true。</span><br><span class="line">*/</span><br><span class="line">@property (nonatomic, strong, nullable) NSSet &lt;NSData *&gt; *pinnedCertificates;</span><br><span class="line">/**</span><br><span class="line">    是否信任无效的或者过期的证书，只在SSLPinningMode为AFSSLPinningModeNone有效。默认为NO。</span><br><span class="line">*/</span><br><span class="line">@property (nonatomic, assign) BOOL allowInvalidCertificates;</span><br><span class="line">/**</span><br><span class="line">    是否校验服务器域名。默认为YES。</span><br><span class="line">*/</span><br><span class="line">@property (nonatomic, assign) BOOL validatesDomainName;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">    评估指定的服务器信任（server trust）在当前安全策略下是否可被信任。</span><br><span class="line">    当服务器返回一个鉴权查询（authentication challenge）时需要使用该方法。</span><br><span class="line">    @param serverTrust 服务器信任的X.509证书。</span><br><span class="line">    @param domain 域名。</span><br><span class="line"></span><br><span class="line">    @return 是否信任服务器。</span><br><span class="line"> */</span><br><span class="line">- (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust</span><br><span class="line">                  forDomain:(nullable NSString *)domain;</span><br></pre></td></tr></table></figure>
 
 <p>  校验证书都是通过调用系统库&lt;Security/Security.h&gt;的方法。AFNetworking所做的操作主要是根据设置的AFSecurityPolicy对象的属性进行证书验证。当SSLPinningMode不进行设置或设置为AFSSLPinningModeNone时，将不进行验证，设置为AFSSLPinningModeCertificate会使用证书进行验证，设置为AFSSLPinningModePublicKey将直接使用证书里面的公钥进行验证。可以通过设置pinnedCertificates属性来设置验证所用的证书，也可以通过+certificatesInBundle:方法加载单独放在一个Bundle里的证书，如果不设置，AFNetworking会使用NSBundle的+bundleForClass:方法将放在AFNetworking.framework里面的cer文件作为验证所用证书。</p>
-<p>####2.1.1.3 Reachability网络监测模块</p>
-<p>  这里我们就不在进行详细的解释，直接贴上官方文档：<br><strong>AFNetworkReachabilityManager用于监听域名或者IP地址的可达性，包括WWAN和WiFi网络接口。<br>Reachability可以被用来确定一个网络操作失败的后台信息，或者当连接建立时触发网络操作重试。<br>它不应该用于阻止用户发起网络请求，因为可能需要第一个请求来建立可达性。</strong></p>
-<p>####2.1.1.4 NSURLSession模块</p>
-<p>  我们来看一下 <strong>AFURLSessionManager</strong> 这个属性的对象的内容：</p>
+<h4 id="2-1-1-3-Reachability网络监测模块"><a href="#2-1-1-3-Reachability网络监测模块" class="headerlink" title="2.1.1.3 Reachability网络监测模块"></a>2.1.1.3 Reachability网络监测模块</h4><p>  这里我们就不在进行详细的解释，直接贴上官方文档：<br><strong>AFNetworkReachabilityManager用于监听域名或者IP地址的可达性，包括WWAN和WiFi网络接口。<br>Reachability可以被用来确定一个网络操作失败的后台信息，或者当连接建立时触发网络操作重试。<br>它不应该用于阻止用户发起网络请求，因为可能需要第一个请求来建立可达性。</strong></p>
+<h4 id="2-1-1-4-NSURLSession模块"><a href="#2-1-1-4-NSURLSession模块" class="headerlink" title="2.1.1.4 NSURLSession模块"></a>2.1.1.4 NSURLSession模块</h4><p>  我们来看一下 <strong>AFURLSessionManager</strong> 这个属性的对象的内容：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//属性</span><br><span class="line">/** 管理的session */</span><br><span class="line">@property (readonly, nonatomic, strong) NSURLSession *session;</span><br><span class="line">/** 代理回调中在运行的operationQueue。 */</span><br><span class="line">@property (readonly, nonatomic, strong) NSOperationQueue *operationQueue;</span><br><span class="line">/**</span><br><span class="line">    使用方法dataTaskWithRequest:success:failure:并且使用了GET、POST等简便方法的返回的数据将被自动使用responseSerializer检验和序列化。默认为一个AFJSONResponseSerializer对象。</span><br><span class="line">*/</span><br><span class="line">@property (nonatomic, strong) id &lt;AFURLResponseSerialization&gt; responseSerializer;</span><br><span class="line">/** 用于评估服务器受信任情况的安全策略。默认使用defaultPolicy。 */</span><br><span class="line">@property (nonatomic, strong) AFSecurityPolicy *securityPolicy;</span><br><span class="line">/** 网络监测管理对象。默认sharedManager。 */</span><br><span class="line">@property (readwrite, nonatomic, strong) AFNetworkReachabilityManager *reachabilityManager;</span><br><span class="line">/** 当前运行在session中的所有数据、上传和下载任务。 */</span><br><span class="line">@property (readonly, nonatomic, strong) NSArray &lt;NSURLSessionTask *&gt; *tasks;</span><br><span class="line">@property (readonly, nonatomic, strong) NSArray &lt;NSURLSessionDataTask *&gt; *dataTasks;</span><br><span class="line">@property (readonly, nonatomic, strong) NSArray &lt;NSURLSessionUploadTask *&gt; *uploadTasks;</span><br><span class="line">@property (readonly, nonatomic, strong) NSArray &lt;NSURLSessionDownloadTask *&gt; *downloadTasks;</span><br><span class="line">/** 执行completionBlock的队列。默认为主线程队列。 */</span><br><span class="line">@property (nonatomic, strong, nullable) dispatch_queue_t completionQueue;</span><br><span class="line">/** 执行completionBlock的group。默认为一个私有的dispatch_group。 */</span><br><span class="line">@property (nonatomic, strong, nullable) dispatch_group_t completionGroup;</span><br></pre></td></tr></table></figure>
 
 <p>  AFURLSessionManager将每一个task都分别交给一个AFURLSessionManagerTaskDelegate对象进行管理，AFURLSessionManagerTaskDelegate相当于扩展了NSURLSessionTask的属性。</p>
@@ -372,8 +374,7 @@
 <li><p>利用https加密保证数据安全，同时对于底层关键代码进行混淆，防止逆向</p>
 </li>
 </ul>
-<p>###2.1.2 Realm数据库</p>
-<p>  在iOS端，我们经常使用的数据库，<strong>CoreData</strong> 和 <strong>Sqlite</strong>，众所周知， <strong>Sqlite</strong> 需要我们使用的SQL语句，而且占用资源很低，处理速度也十分快，而Coredata使用映射关系来存储数据，虽然其也是基于Sqlite封装，但是对于Coredata的API很多开发者都无法接受，用起来十分复杂。<br>  我们的项目，也是使用基于 <strong>SQLite</strong> 封装的一个三方库，叫做 <strong>FMDB</strong>，FMDB是针对libsqlite3框架进行封装的三方，它以OC的方式封装了SQLite的C语言的API，使用步骤与SQLite相似，<br>  可以来看一下它的优点：</p>
+<h3 id="2-1-2-Realm数据库"><a href="#2-1-2-Realm数据库" class="headerlink" title="2.1.2 Realm数据库"></a>2.1.2 Realm数据库</h3><p>  在iOS端，我们经常使用的数据库，<strong>CoreData</strong> 和 <strong>Sqlite</strong>，众所周知， <strong>Sqlite</strong> 需要我们使用的SQL语句，而且占用资源很低，处理速度也十分快，而Coredata使用映射关系来存储数据，虽然其也是基于Sqlite封装，但是对于Coredata的API很多开发者都无法接受，用起来十分复杂。<br>  我们的项目，也是使用基于 <strong>SQLite</strong> 封装的一个三方库，叫做 <strong>FMDB</strong>，FMDB是针对libsqlite3框架进行封装的三方，它以OC的方式封装了SQLite的C语言的API，使用步骤与SQLite相似，<br>  可以来看一下它的优点：</p>
 <ul>
 <li><p>使用时面向对象，避免了复杂的C语言代码</p>
 </li>
@@ -486,15 +487,13 @@
 <li>自己封装一个realm全局单例实例意义不大，虽然在以往的FMDB数据库，我们会封装单例来管理，但是同一个Realm对象是不支持跨线程操作realm数据库的。其实RLMRealm *realm = [RLMRealm defaultRealm]; 这句话就是获取了当前realm对象的一个实例，其实实现就是拿到单例。所以我们每次在子线程里面不要再去读取我们自己封装持有的realm实例了，直接调用系统的这个方法即可，能保证访问不出错。</li>
 <li>建议每个model 都设置主键，方便add和update</li>
 </ul>
-<p>##2.2 中间件</p>
-<p><font color="#D2691E" size="5"><em>中间件是一种独立的系统软件或服务程序，分布式应用软件借助这种软件在不同的技术之间共享资源。中间件位于客户机/ 服务器的操作系统之上，管理计算机资源和网络通讯。是连接两个独立应用程序或独立系统的软件。相连接的系统，即使它们具有不同的接口，但通过中间件相互之间仍能交换信息。执行中间件的一个关键途径是信息传递。通过中间件，应用程序可以工作于多平台或OS环境。</em></font></p>
+<h2 id="2-2-中间件"><a href="#2-2-中间件" class="headerlink" title="2.2 中间件"></a>2.2 中间件</h2><p><font color="#D2691E" size="5"><em>中间件是一种独立的系统软件或服务程序，分布式应用软件借助这种软件在不同的技术之间共享资源。中间件位于客户机/ 服务器的操作系统之上，管理计算机资源和网络通讯。是连接两个独立应用程序或独立系统的软件。相连接的系统，即使它们具有不同的接口，但通过中间件相互之间仍能交换信息。执行中间件的一个关键途径是信息传递。通过中间件，应用程序可以工作于多平台或OS环境。</em></font></p>
 <p>  在我们进行组件化模块化分区的时候，就产生了一个问题，我们如何关联这些 <strong>块</strong>，对于组件而言，我们可以直接使用，但是模块呢？模块如果直接的引用，必定造成不小的后果</p>
 <hr>
 <p><font color="red" size="6">后期维护成本高，因为高耦合，模块移植难度大！！！</font></p>
 <hr>
 <p>  这时候需要我们使用中间件来串联我们的各个模块与主程序。</p>
-<p>###2.2.1 Runtime</p>
-<p>runtime是一门动态语言基于C和汇编，iOS系统自带公用的动态库，程序都是有运行时系统动态创建所需要的对象，而其核心机制是消息传递。</p>
+<h3 id="2-2-1-Runtime"><a href="#2-2-1-Runtime" class="headerlink" title="2.2.1 Runtime"></a>2.2.1 Runtime</h3><p>runtime是一门动态语言基于C和汇编，iOS系统自带公用的动态库，程序都是有运行时系统动态创建所需要的对象，而其核心机制是消息传递。</p>
 <p>OC是运行时语言，在应用程序运行时来决定函数内部实现什么具体的方法，在运行期间，可以创建、检查、修改类。</p>
 <p>我们来说一下消息传递机制吧，系统首先查找消息接受对象，通过对象isa指针查找其类对象，在类对象中查找方法列表method_lists，如果没有，则去父类查找，找到对应方法执行IMP指针，否则抛出异常导致crash。</p>
 <p>关于消息转发机制，可以这样来描述，当调用一个方法，首先发送消息在类对象中搜索方法列表，如果未找到会一直沿着继承树向上搜索，如果找不到，回执不识别方法，crash。此流程分为动态方法解析、备用接受者、完整消息转发。</p>
@@ -506,8 +505,7 @@
 <li>热修复技术</li>
 </ul>
 <p>接下来我会根据这四点进行描述。</p>
-<p>####2.2.1.1 关联对象</p>
-<p>虽然Objective-C是基于C语言开发，但却是OOP，说到OOP，总会想起熟悉的那三大特性：</p>
+<h4 id="2-2-1-1-关联对象"><a href="#2-2-1-1-关联对象" class="headerlink" title="2.2.1.1 关联对象"></a>2.2.1.1 关联对象</h4><p>虽然Objective-C是基于C语言开发，但却是OOP，说到OOP，总会想起熟悉的那三大特性：</p>
 <ul>
 <li>封装</li>
 <li>继承</li>
@@ -518,22 +516,18 @@
 <p>举个例子，我们区县所使用的新闻搜索框，本来是一个完整的功能，但是后来，产品提了一个需求，新增一个问政搜索框，那好，我们根据面向对象的思想，去继承新闻搜索框，Over，任务完成。几天后产品又来了个需求，把新闻搜索框的UI进行大调整？怎么办？改了新闻搜索框我的问政搜索框也会跟着改呀？复制一份代码出来？真的复杂，脑壳大，在想不想用继承了，高耦合。日复一日年复一年，这样的累积越来越多，让我们失去了兴趣，可见，代码复用也是分类别的，如果当初只是出于代码复用的目的而不区分类别和场景，就采用继承是不恰当的。我们应当考虑以上3点要素看是否符合，才能决定是否使用继承。</p>
 <p>这时候，我们为什么不使用AOP呢，AOP面向切面编程，把我们多次重用或者不同的代码，单独提取出来，封装成单独的对象，这样，即使在进行项目移植的时候，低耦合，只需要我需要的，不用再拖拽相关的其他文件。</p>
 <pre><code>A类，B类，C类，都属于平级类对象，我们需要给这3个类都添加一个 d 属性，我们直接使用关联对象，使 A-&gt;d，B-&gt;d，C-&gt;d，这样绑定起来，而且 A、B、C 三个类没有没有任何的关联，又得到了 d 属性，是不是很完美的解决方案。</code></pre><p>而iOS本身是支持分类拓展的，虽然拓展不能支持给对象添加属性，但是我们可以利用Runtime机制动态给对象添加属性，可以把一个对象拆分成多个对象来单独管理，便于维护，降低耦合，完全可以达到使用组合分类来实现继承想要的效果，可以较好的解决我们的需求问题。</p>
-<p>####2.2.1.2 归档解档</p>
-<p>iOS少不了自定义模型，而如果要把自定义的模型进行持久存储，又必须要遵守 NSCoding 协议，这个协议是什么呢，我们可以来看一下代码</p>
+<h4 id="2-2-1-2-归档解档"><a href="#2-2-1-2-归档解档" class="headerlink" title="2.2.1.2 归档解档"></a>2.2.1.2 归档解档</h4><p>iOS少不了自定义模型，而如果要把自定义的模型进行持久存储，又必须要遵守 NSCoding 协议，这个协议是什么呢，我们可以来看一下代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">@interface Student : NSObject&lt;NSCoding&gt;</span><br><span class="line"></span><br><span class="line">@property (nonatomic, copy) NSString *name;</span><br><span class="line">@property (nonatomic, copy) NSString *phone;</span><br><span class="line">@property (nonatomic, copy) NSString *score;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@implementation Student</span><br><span class="line"></span><br><span class="line">- (void)encodeWithCoder:(NSCoder *)aCoder</span><br><span class="line">&#123;</span><br><span class="line">    [aCoder encodeObject:_name forKey:@&quot;name&quot;];</span><br><span class="line">    [aCoder encodeObject:_phone forKey:@&quot;phone&quot;];</span><br><span class="line">    [aCoder encodeObject:_score forKey:@&quot;score&quot;];</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (id)initWithCoder:(NSCoder *)aDecoder</span><br><span class="line">&#123;</span><br><span class="line">    if (self = [super init]) &#123;</span><br><span class="line">        self.name = [aDecoder decodeObjectForKey:@&quot;name&quot;];</span><br><span class="line">        self.phone = [aDecoder decodeObjectForKey:@&quot;phone&quot;];</span><br><span class="line">        self.score = [aDecoder decodeObjectForKey:@&quot;score&quot;];</span><br><span class="line">    &#125;</span><br><span class="line">    return self;</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
 
 <p>上面的两个方法，分别是归档和解档，如果当我们一个自定义模型有几十个属性呢？难道还需要我们一个一个的手动写入？那未免也太复杂了吧，这时候就可以利用Runtime机制来实现自动的归档解档：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">- (void)encodeWithCoder:(NSCoder *)encoder</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    unsigned int count = 0;</span><br><span class="line">    Ivar *ivars = class_copyIvarList([Student class], &amp;count);</span><br><span class="line"></span><br><span class="line">    for (int i = 0; i&lt;count; i++) &#123;</span><br><span class="line">        // 取出i位置对应的成员变量</span><br><span class="line">        Ivar ivar = ivars[i];</span><br><span class="line">        // 查看成员变量</span><br><span class="line">        const char *name = ivar_getName(ivar);</span><br><span class="line">        // 归档</span><br><span class="line">        NSString *key = [NSString stringWithUTF8String:name];</span><br><span class="line">        id value = [self valueForKey:key];</span><br><span class="line">        [encoder encodeObject:value forKey:key];</span><br><span class="line">    &#125;</span><br><span class="line">    free(ivars);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (id)initWithCoder:(NSCoder *)decoder</span><br><span class="line">&#123;</span><br><span class="line">    if (self = [super init]) &#123;</span><br><span class="line">        unsigned int count = 0;</span><br><span class="line">        Ivar *ivars = class_copyIvarList([Student class], &amp;count);</span><br><span class="line">        for (int i = 0; i&lt;count; i++) &#123;</span><br><span class="line">        // 取出i位置对应的成员变量</span><br><span class="line">        Ivar ivar = ivars[i];</span><br><span class="line">        // 查看成员变量</span><br><span class="line">        const char *name = ivar_getName(ivar);</span><br><span class="line">       // 归档</span><br><span class="line">       NSString *key = [NSString stringWithUTF8String:name];</span><br><span class="line">      id value = [decoder decodeObjectForKey:key];</span><br><span class="line">       // 设置到成员变量身上</span><br><span class="line">        [self setValue:value forKey:key];</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        free(ivars);</span><br><span class="line">    &#125; </span><br><span class="line">    return self;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>其实 Ivar 是代表变量，利用Runtime遍历所有的变量，获取模型的变量名，然后自动生成键值对。即使有100个属性都不会在担心了。</p>
-<p>####2.2.1.3 KVO实现原理</p>
-<p>这话题总让人想起面试的情节，<br>面试官会习惯性的问你————“你说一下KVO和KVC的区别”。<br>面试者也是习惯性的回答————“KVC是键值对，而KVO是使用观察者模式来监听某属性的变化。。。。。。”<br>面试官————“没了？？？”<br>面试者————“没了…(脸上笑嘻嘻，心里xxx)”</p>
+<h4 id="2-2-1-3-KVO实现原理"><a href="#2-2-1-3-KVO实现原理" class="headerlink" title="2.2.1.3 KVO实现原理"></a>2.2.1.3 KVO实现原理</h4><p>这话题总让人想起面试的情节，<br>面试官会习惯性的问你————“你说一下KVO和KVC的区别”。<br>面试者也是习惯性的回答————“KVC是键值对，而KVO是使用观察者模式来监听某属性的变化。。。。。。”<br>面试官————“没了？？？”<br>面试者————“没了…(脸上笑嘻嘻，心里xxx)”</p>
 <p>其实KVO可以这样理解：</p>
 <p>   Apple使用了 isa-swizzling来实现 KVO。当观察对象A时，KVO机制动态创建一个新的名为：NSKVONotifying_A的新类，该类继承自对象A的本类，且 KVO为 NSKVONotifying_A重写观察属性的 setter方法，setter方法会负责在调用原 setter方法之前和之后，通知所有观察对象属性值的更改情况。在这个过程，被观察对象的 isa指针从指向原来的 A类，被KVO机制修改为指向系统新创建的子类NSKVONotifying_A类，来实现当前类属性值改变的监听；<br>所以当我们从应用层面上看来，完全没有意识到有新的类出现，这是系统“隐瞒”了对 KVO的底层实现过程，让我们误以为还是原来的类。但是此时如果我们创建一个新的名为“NSKVONotifying_A”的类，就会发现系统运行到注册 KVO的那段代码时程序就崩溃，因为系统在注册监听的时候动态创建了名为 NSKVONotifying_A的中间类，并指向这个中间类了。<br>   KVO的键值观察通知依赖于 NSObject 的两个方法:willChangeValueForKey:和 didChangeValueForKey:，在存取数值的前后分别调用 2 个方法：<br>被观察属性发生改变之前，willChangeValueForKey:被调用，通知系统该 keyPath的属性值即将变更；<br>当改变发生后， didChangeValueForKey:被调用，通知系统该keyPath的属性值已经变更；之后， observeValueForKey:ofObject:change:context:也会被调用。且重写观察属性的setter方法这种继承方式的注入是在运行时而不是编译时实现的。</p>
-<p>####2.2.1.4 热修复</p>
-<p>热修复技术确实给Native开发节约了很大的时间成本，而做到通过JS调用和改写OC方法最根本的原因是 Objective-C 是动态语言，OC上所有方法的调用/类的生成都通过 Objective-C Runtime 在运行时进行，我们可以通过类名/方法名反射得到相应的类和方法。</p>
-<p>###2.2.2 Route</p>
-<p>其实，最初了解Route的时候，是在以前学习NodeJS开发了解到的，当时在项目中了解到这样一个代码块：</p>
+<h4 id="2-2-1-4-热修复"><a href="#2-2-1-4-热修复" class="headerlink" title="2.2.1.4 热修复"></a>2.2.1.4 热修复</h4><p>热修复技术确实给Native开发节约了很大的时间成本，而做到通过JS调用和改写OC方法最根本的原因是 Objective-C 是动态语言，OC上所有方法的调用/类的生成都通过 Objective-C Runtime 在运行时进行，我们可以通过类名/方法名反射得到相应的类和方法。</p>
+<h3 id="2-2-2-Route"><a href="#2-2-2-Route" class="headerlink" title="2.2.2 Route"></a>2.2.2 Route</h3><p>其实，最初了解Route的时候，是在以前学习NodeJS开发了解到的，当时在项目中了解到这样一个代码块：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> _ = <span class="built_in">require</span>(<span class="string">'underscore'</span>);</span><br><span class="line"><span class="keyword">var</span> Index = <span class="built_in">require</span>(<span class="string">'../app/controllers/index'</span>);</span><br><span class="line"><span class="keyword">var</span> User = <span class="built_in">require</span>(<span class="string">'../app/controllers/user'</span>);</span><br><span class="line"><span class="keyword">var</span> Movie = <span class="built_in">require</span>(<span class="string">'../app/controllers/movie'</span>);</span><br><span class="line"><span class="keyword">var</span> Comment = <span class="built_in">require</span>(<span class="string">'../app/controllers/comment'</span>);</span><br><span class="line"><span class="keyword">var</span> Category = <span class="built_in">require</span>(<span class="string">'../app/controllers/category'</span>);</span><br><span class="line"><span class="keyword">var</span> Weather = <span class="built_in">require</span>(<span class="string">'../app/controllers/weather'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">app</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// pre handle user</span></span><br><span class="line"></span><br><span class="line">  app.use(<span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> _user = req.session.user;</span><br><span class="line">    app.locals.user = _user;</span><br><span class="line">    next();</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Index */</span></span><br><span class="line">  app.get(<span class="string">'/'</span>, Index.index);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* User */</span></span><br><span class="line"></span><br><span class="line">  app.post(<span class="string">'/user/signup'</span>, User.signup);</span><br><span class="line">  app.post(<span class="string">'/user/signin'</span>, User.signin);</span><br><span class="line">  app.get(<span class="string">'/signin'</span>, User.showSignin);</span><br><span class="line">  app.get(<span class="string">'/signup'</span>, User.showSignup);</span><br><span class="line">  app.get(<span class="string">'/logout'</span>, User.logout);</span><br><span class="line">  app.get(<span class="string">'/admin/userlist'</span>, User.signinRequired, User.adminRequired, User.list);</span><br><span class="line">  app.delete(<span class="string">'/admin/userlist'</span>, User.del);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Movie */</span></span><br><span class="line">  app.post(<span class="string">'/admin/movie'</span>, User.signinRequired, User.adminRequired, Movie.savePoster, Movie.save);</span><br><span class="line">  app.get(<span class="string">'/movie/:id'</span>, Movie.detail);</span><br><span class="line">  app.get(<span class="string">'/admin/movie/update/:id'</span>, User.signinRequired, User.adminRequired, Movie.update);</span><br><span class="line">  app.get(<span class="string">'/admin/movie/new'</span>, User.signinRequired, User.adminRequired, Movie.new);</span><br><span class="line">  app.get(<span class="string">'/admin/movie/list'</span>, Movie.list);</span><br><span class="line">  app.delete(<span class="string">'/admin/movie/list'</span>, User.signinRequired, User.adminRequired, Movie.del);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/* Comment */</span></span><br><span class="line">  app.post(<span class="string">'/admin/user/comment'</span>, User.signinRequired, Comment.save);</span><br><span class="line">  app.post(<span class="string">'/comment/reply'</span>, User.signinRequired, Comment.replyToUser);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/* Category */</span></span><br><span class="line">  app.get(<span class="string">'/admin/category/new'</span>, User.signinRequired, User.adminRequired, Category.new);</span><br><span class="line">  app.get(<span class="string">'/admin/category/list'</span>, User.signinRequired, User.adminRequired, Category.list);</span><br><span class="line">  app.post(<span class="string">'/admin/category'</span>, User.signinRequired, User.adminRequired, Category.save);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/* results */</span></span><br><span class="line">  app.get(<span class="string">'/results'</span>, Index.search);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* iphone手机 test api */</span></span><br><span class="line">  app.get(<span class="string">'/testapi'</span>, Index.testapi);</span><br><span class="line"></span><br><span class="line">  app.get(<span class="string">'/weatherdetail/:areaname'</span>, Weather.weatherWithAreaname);</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p>根据不同的链接地址，由中间路由分发到不同的页面，这样让所有的跳转逻辑统一处理，直观，而且低耦合，不会让文件之间相互引用。我们平常的iOS开发中，页面间的跳转，举个例子吧：</p>
@@ -551,10 +545,8 @@
 <li>参数：参数集中放置于路由，结合逻辑处理</li>
 <li>模块之间调用：通过Runtime动态机制，实现模块层之间相互调用且低耦合</li>
 </ul>
-<p>##2.3 模块化</p>
-<p>模块化就如我们先前所说，主要偏向于业务层，功能繁杂，且是横向分块。</p>
-<p>###2.3.1 WKWebView</p>
-<p>我们以前所有的项目都是用 UIWebView，UIWebView的能力很丰富，可以将其理解为一个内置的webkit，具有页面解析、排版布局、执行javascript脚本等功能。WebKit是由Apple公司开发的开源浏览器内核，应用于Apple Safari浏览器。此外，UIWebView还支持浏览word/excel/ppt/pdf/page/number等多种文档格式。<br>但是，UIWebView很多功能不齐全，更像是一个阉割版的WebKit。</p>
+<h2 id="2-3-模块化"><a href="#2-3-模块化" class="headerlink" title="2.3 模块化"></a>2.3 模块化</h2><p>模块化就如我们先前所说，主要偏向于业务层，功能繁杂，且是横向分块。</p>
+<h3 id="2-3-1-WKWebView"><a href="#2-3-1-WKWebView" class="headerlink" title="2.3.1 WKWebView"></a>2.3.1 WKWebView</h3><p>我们以前所有的项目都是用 UIWebView，UIWebView的能力很丰富，可以将其理解为一个内置的webkit，具有页面解析、排版布局、执行javascript脚本等功能。WebKit是由Apple公司开发的开源浏览器内核，应用于Apple Safari浏览器。此外，UIWebView还支持浏览word/excel/ppt/pdf/page/number等多种文档格式。<br>但是，UIWebView很多功能不齐全，更像是一个阉割版的WebKit。</p>
 <p>WebKit主要有三大模块：</p>
 <ul>
 <li>WebCore：是最核心的部分，负责HTML、CSS的解析和页面布局渲染</li>
@@ -570,18 +562,12 @@
 <li>支持对错误的自签名安全证书和证书进行身份验证</li>
 <li>异步执行处理JavaScript</li>
 </ul>
-<p>####2.3.1.1 多进程</p>
-<p>   WKWebView为多进程组件，也意味着会从App内存中分离内存到单独的进程(Network Process and Rendring Process)中。当内存超过了系统分配给WKWebView的内存时候，会导致WKWebView浏览器崩溃白屏，但是App不会Crash。(app会收到系统通知，并且尝试去重新加载页面)。<br>   相反的，UIWebView是和app同一个进程，UIWebView加载页面占用的内存被计算为app内存占用的一部分，当app超过了系统分配的内存，则会被操作系统crash。在整个过程中，会经常收到iOS系统的通知用来防止app被系统kill，但是在某些时候，这些通知不够及时，或者根本没有返回通知。</p>
-<p>####2.3.1.2 Nitro JavaScript引擎</p>
-<p>   WKWebView使用和手机Safari浏览器一样的Nitro JavaScript引擎，相比于UIWebView的JavaScript引擎有了非常重要的性能提升</p>
-<p>####2.3.1.3 消除触摸延迟</p>
-<p>   UIWebView和WKWebView浏览器组件会将触摸事件解释后发送给app，因此，我们无法提高触摸事件的灵敏度或速度。在UIWebView上的任何触摸事件会被延迟300ms，用以判断用户是单击还是双击。这个机制也是那些基于HTML的web app一直不被用户接受的重要原因。<br>   在WKWebView中，测试显示，只有在点击很快(&lt;~125ms)的时候才会添加300ms的延迟，iOS将其解释为更可能是双击“点击缩放”手势的一部分，而不是慢点击（&gt;〜125 ms）后。更多细节在这里，为了消除所有触摸事件（包括快速点击）的触摸延迟，您可以添加FastClick或另一个消除此延迟的库到您的内容中。</p>
-<p>####2.3.1.4 支持服务端的身份校验</p>
-<p>   与不支持服务器认证校验的UIWebView不同，WKWebView支持服务端校验。实际上，这意味着在使用WKWebView时，可以输入密码保护网站。</p>
-<p>####2.3.1.5 支持对错误的自签名安全证书和证书进行身份验证</p>
-<p>   通过“继续”/“取消”弹出窗口，WKWebView允许您绕过安全证书中的错误（例如，使用自签名证书或过期证书时）。</p>
-<p>####2.3.1.6 异步执行处理JavaScript</p>
-<p>   UIWebView处理JS交互是同步的，而WKWebView是异步处理，这是两者不同的地方。<br>   既然这里说道了JS，那我就说一下h5与native的交互。<br>   js交互主要分为两种情况</p>
+<h4 id="2-3-1-1-多进程"><a href="#2-3-1-1-多进程" class="headerlink" title="2.3.1.1 多进程"></a>2.3.1.1 多进程</h4><p>   WKWebView为多进程组件，也意味着会从App内存中分离内存到单独的进程(Network Process and Rendring Process)中。当内存超过了系统分配给WKWebView的内存时候，会导致WKWebView浏览器崩溃白屏，但是App不会Crash。(app会收到系统通知，并且尝试去重新加载页面)。<br>   相反的，UIWebView是和app同一个进程，UIWebView加载页面占用的内存被计算为app内存占用的一部分，当app超过了系统分配的内存，则会被操作系统crash。在整个过程中，会经常收到iOS系统的通知用来防止app被系统kill，但是在某些时候，这些通知不够及时，或者根本没有返回通知。</p>
+<h4 id="2-3-1-2-Nitro-JavaScript引擎"><a href="#2-3-1-2-Nitro-JavaScript引擎" class="headerlink" title="2.3.1.2 Nitro JavaScript引擎"></a>2.3.1.2 Nitro JavaScript引擎</h4><p>   WKWebView使用和手机Safari浏览器一样的Nitro JavaScript引擎，相比于UIWebView的JavaScript引擎有了非常重要的性能提升</p>
+<h4 id="2-3-1-3-消除触摸延迟"><a href="#2-3-1-3-消除触摸延迟" class="headerlink" title="2.3.1.3 消除触摸延迟"></a>2.3.1.3 消除触摸延迟</h4><p>   UIWebView和WKWebView浏览器组件会将触摸事件解释后发送给app，因此，我们无法提高触摸事件的灵敏度或速度。在UIWebView上的任何触摸事件会被延迟300ms，用以判断用户是单击还是双击。这个机制也是那些基于HTML的web app一直不被用户接受的重要原因。<br>   在WKWebView中，测试显示，只有在点击很快(&lt;~125ms)的时候才会添加300ms的延迟，iOS将其解释为更可能是双击“点击缩放”手势的一部分，而不是慢点击（&gt;〜125 ms）后。更多细节在这里，为了消除所有触摸事件（包括快速点击）的触摸延迟，您可以添加FastClick或另一个消除此延迟的库到您的内容中。</p>
+<h4 id="2-3-1-4-支持服务端的身份校验"><a href="#2-3-1-4-支持服务端的身份校验" class="headerlink" title="2.3.1.4 支持服务端的身份校验"></a>2.3.1.4 支持服务端的身份校验</h4><p>   与不支持服务器认证校验的UIWebView不同，WKWebView支持服务端校验。实际上，这意味着在使用WKWebView时，可以输入密码保护网站。</p>
+<h4 id="2-3-1-5-支持对错误的自签名安全证书和证书进行身份验证"><a href="#2-3-1-5-支持对错误的自签名安全证书和证书进行身份验证" class="headerlink" title="2.3.1.5 支持对错误的自签名安全证书和证书进行身份验证"></a>2.3.1.5 支持对错误的自签名安全证书和证书进行身份验证</h4><p>   通过“继续”/“取消”弹出窗口，WKWebView允许您绕过安全证书中的错误（例如，使用自签名证书或过期证书时）。</p>
+<h4 id="2-3-1-6-异步执行处理JavaScript"><a href="#2-3-1-6-异步执行处理JavaScript" class="headerlink" title="2.3.1.6 异步执行处理JavaScript"></a>2.3.1.6 异步执行处理JavaScript</h4><p>   UIWebView处理JS交互是同步的，而WKWebView是异步处理，这是两者不同的地方。<br>   既然这里说道了JS，那我就说一下h5与native的交互。<br>   js交互主要分为两种情况</p>
 <ul>
 <li><p>app调用h5</p>
 </li>
@@ -676,6 +662,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-组件化模块化的广泛定义"><span class="nav-number">1.</span> <span class="nav-text">1.1 组件化模块化的广泛定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-谈谈自己对于组件化模块化的理解"><span class="nav-number">2.</span> <span class="nav-text">1.2 谈谈自己对于组件化模块化的理解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-对iOS端项目进行模块分区"><span class="nav-number"></span> <span class="nav-text">2 对iOS端项目进行模块分区</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-组件化"><span class="nav-number">1.</span> <span class="nav-text">2.1 组件化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-网络层组件"><span class="nav-number">1.1.</span> <span class="nav-text">2.1.1 网络层组件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-1-Serialization序列化模块"><span class="nav-number">1.1.1.</span> <span class="nav-text">2.1.1.1 Serialization序列化模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-2-Security模块"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.1.1.2 Security模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-3-Reachability网络监测模块"><span class="nav-number">1.1.3.</span> <span class="nav-text">2.1.1.3 Reachability网络监测模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-4-NSURLSession模块"><span class="nav-number">1.1.4.</span> <span class="nav-text">2.1.1.4 NSURLSession模块</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-Realm数据库"><span class="nav-number">1.2.</span> <span class="nav-text">2.1.2 Realm数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-中间件"><span class="nav-number">2.</span> <span class="nav-text">2.2 中间件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-Runtime"><span class="nav-number">2.1.</span> <span class="nav-text">2.2.1 Runtime</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-1-关联对象"><span class="nav-number">2.1.1.</span> <span class="nav-text">2.2.1.1 关联对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-2-归档解档"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.2.1.2 归档解档</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-3-KVO实现原理"><span class="nav-number">2.1.3.</span> <span class="nav-text">2.2.1.3 KVO实现原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-4-热修复"><span class="nav-number">2.1.4.</span> <span class="nav-text">2.2.1.4 热修复</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-Route"><span class="nav-number">2.2.</span> <span class="nav-text">2.2.2 Route</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-模块化"><span class="nav-number">3.</span> <span class="nav-text">2.3 模块化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-WKWebView"><span class="nav-number">3.1.</span> <span class="nav-text">2.3.1 WKWebView</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1-1-多进程"><span class="nav-number">3.1.1.</span> <span class="nav-text">2.3.1.1 多进程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1-2-Nitro-JavaScript引擎"><span class="nav-number">3.1.2.</span> <span class="nav-text">2.3.1.2 Nitro JavaScript引擎</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1-3-消除触摸延迟"><span class="nav-number">3.1.3.</span> <span class="nav-text">2.3.1.3 消除触摸延迟</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1-4-支持服务端的身份校验"><span class="nav-number">3.1.4.</span> <span class="nav-text">2.3.1.4 支持服务端的身份校验</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1-5-支持对错误的自签名安全证书和证书进行身份验证"><span class="nav-number">3.1.5.</span> <span class="nav-text">2.3.1.5 支持对错误的自签名安全证书和证书进行身份验证</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1-6-异步执行处理JavaScript"><span class="nav-number">3.1.6.</span> <span class="nav-text">2.3.1.6 异步执行处理JavaScript</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
